@@ -1,5 +1,31 @@
 @import 'colors';
+@import 'fonts';
 
-.text {
-	color: purple;
+$product-height: 60vh;
+
+.main {
+	.productHighlight {
+		display: flex;
+		height: $product-height;
+		justify-content: space-between;
+		background-color: $bg-nav;
+		.introText {
+			z-index: 20;
+			margin: auto 6em;
+			padding: 0 2em;
+			background-color: adjust-color($accent, $alpha: -0.4);
+			border-radius: 2em;
+			h1 {
+				color: black;
+				font-size: $text-6xl;
+				font-weight: $font-xbold;
+			}
+		}
+		.productWrapper {
+			position: absolute;
+			z-index: 10;
+			width: 100vw;
+			height: $product-height;
+		}
+	}
 }

@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'fonts';
+
+@import 'nav';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $text-primary;
+  background-color: $bg-primary;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
