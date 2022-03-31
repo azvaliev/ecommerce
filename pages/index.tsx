@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           </h1>
           <span>
             With dozens of options to choose from,<br/>
-            there&apos;s a perfect suit for everybody
+            there&apos;s a perfect look for everybody
           </span>
           <div className={classes.buttonWrapper}>
             <button className="btn btn-outline">

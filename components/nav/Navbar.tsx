@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import NavItem from "./Navitem";
 
 const Navbar = () => {
 
@@ -34,10 +35,10 @@ const Navbar = () => {
 				</div>
 			</div>
 			<ul>
-				<li>Home</li>
-				<li>Shop</li>
-				<li>Contact</li>
-				<li>About</li>
+				<NavItem display="Home" href="/" />
+				<NavItem display="Shop" href="/products" />
+				<NavItem display="Contact" href="/contact"/>
+				<NavItem display="About" href="/about"/>
 			</ul>
 		</nav>,
 		document.getElementById("portal")!
