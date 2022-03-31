@@ -12,13 +12,24 @@ $product-height: 60vh;
 		.introText {
 			z-index: 20;
 			margin: auto 6em;
-			padding: 0 2em;
-			background-color: adjust-color($accent, $alpha: -0.4);
+			padding: 2em 2em;
+			background-color: adjust-color($accent, $alpha: -0.01);
 			border-radius: 2em;
+			color: black;
 			h1 {
-				color: black;
+				margin: 0;
 				font-size: $text-6xl;
 				font-weight: $font-xbold;
+			}
+			span {
+				display: inline-block;
+				margin-top: 0.5em;
+				font-size: $text-xl;
+			}
+			.buttonWrapper {
+				display: flex;
+				margin: 3em 0 0;
+				button { margin: auto; }
 			}
 		}
 		.productWrapper {

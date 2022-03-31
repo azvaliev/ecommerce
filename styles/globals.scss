@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'fonts';
+@import 'buttons';
 
 @import 'nav';
 
@@ -11,6 +12,9 @@ body {
   color: $text-primary;
   background-color: $bg-primary;
   font-family: 'Cormorant Garamond', serif;
+}
+button {
+  font-family: 'Cormorant Garamond', serif; 
 }
 
 a {
