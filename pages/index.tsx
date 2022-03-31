@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import classes from '../styles/Home.module.scss'
+import BackgroundImage from "../public/img/models/man-in-suit-crossing-street.jpg"
 
 const Home: NextPage = () => {
   return (
@@ -24,11 +24,13 @@ const Home: NextPage = () => {
         </div>
         <div className={classes.productWrapper}>
           <Image 
-            src="/img/models/man-in-suit-crossing-street.jpg"
+            src={BackgroundImage}
             alt="Man in Suit"
+            placeholder="blur"
             objectFit="cover"
             objectPosition="0 35%"
             layout="fill"
+            priority
             />
         </div>
       </section>

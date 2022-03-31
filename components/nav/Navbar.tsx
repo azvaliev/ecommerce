@@ -2,6 +2,7 @@ import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import NavItem from "./Navitem";
+import PerseusIcon from "../../public/img/logo/perseus-icon.webp";
 
 const Navbar = () => {
 
@@ -19,10 +20,11 @@ const Navbar = () => {
 			<div className="wrapper-icon-logo">
 				<div className="wrapper-icon">
 					<Image 
-						src="/img/logo/perseus-icon.webp"
+						src={PerseusIcon}
 						layout="fill"
 						objectFit="contain"
 						alt="Roman with scythe"
+						placeholder="blur"
 						/>
 				</div>
 				<div className="wrapper-logo">
@@ -31,6 +33,7 @@ const Navbar = () => {
 						layout="fill"
 						objectFit="contain"
 						alt="Perseus"
+						priority
 						/>
 				</div>
 			</div>
