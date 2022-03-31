@@ -1,0 +1,22 @@
+.error-wrapper {
+	display: flex;	
+	flex-direction: row;
+	margin: 30vh auto 0;
+	width: fit-content;
+	h1 {
+		margin: auto 0 1em;
+		padding-right: 0.5em;
+
+		font-size: $text-4xl;
+		line-height: 1;
+	}
+	span {
+		display: inline-flex;
+		margin: auto 0;
+		padding-left: 0.5em;
+		border-left: 1px solid $accent;
+
+		font-size: $text-xl;
+		line-height: 3em;
+	}
+}
