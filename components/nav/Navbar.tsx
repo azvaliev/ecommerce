@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import NavItem from "./Navitem";
 import PerseusIcon from "../../public/img/logo/perseus-icon.webp";
+import Link from "next/link";
 
 const Navbar = () => {
 
@@ -18,24 +19,28 @@ const Navbar = () => {
 	return isMounted ? createPortal(
 		<nav>
 			<div className="wrapper-icon-logo">
-				<div className="wrapper-icon">
-					<Image 
-						src={PerseusIcon}
-						layout="fill"
-						objectFit="contain"
-						alt="Roman with scythe"
-						placeholder="blur"
-						/>
-				</div>
-				<div className="wrapper-logo">
-					<Image 
-						src="/img/logo/text-logo.webp" 
-						layout="fill"
-						objectFit="contain"
-						alt="Perseus"
-						priority
-						/>
-				</div>
+				<Link href="/" passHref>
+					<div className="wrapper-icon">
+						<Image 
+							src={PerseusIcon}
+							layout="fill"
+							objectFit="contain"
+							alt="Roman with scythe"
+							placeholder="blur"
+							/>
+					</div>
+				</Link>
+				<Link href="/" passHref>
+					<div className="wrapper-logo">
+						<Image 
+							src="/img/logo/text-logo.webp" 
+							layout="fill"
+							objectFit="contain"
+							alt="Perseus"
+							priority
+							/>
+					</div>
+				</Link>
 			</div>
 			<ul>
 				<NavItem display="Home" href="/" />

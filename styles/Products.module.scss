@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'colors';
 
 .title {
 	margin-top: 1em;
@@ -13,13 +14,42 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-content: space-around;
+	margin: 0 10vw;
 }
 
-.productWrapper {
-	width: 25%;
-	.productImageWrapper {
+.product-wrapper {
+	width: 21%;
+	box-sizing: border-box;
+	margin: 0 2%;
+	transition: 0.5s ease-in-out;
+
+	&:hover {
+		scale: 1.05;
+	}
+
+	.product-image-wrapper {
 		position: relative;
-		width: 20vw;
-		height: 25vh;
+		width: 100%;
+		height: 37vh;
+	}
+	h3 {
+		margin-bottom: 0;
+		font-size: $text-md;
+		font-weight: $font-xbold;
+	}
+	.product-prices {
+		display: flex;
+		font-size: $text-lg;
+		
+		.product-discount {
+			margin-right: 1.5ch;
+			color: $accent-secondary;
+		}
+
+		h4 {
+			font-family: 'Lato', sans-serif;
+			font-weight: $font-thin;
+			margin-top: 0.3em;
+		}
 	}
 }

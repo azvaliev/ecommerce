@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import classes from '../styles/Home.module.scss'
 import BackgroundImage from "../public/img/models/man-in-suit-crossing-street.jpg"
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
@@ -17,9 +18,11 @@ const Home: NextPage = () => {
             there&apos;s a perfect look for everybody
           </span>
           <div className={classes.buttonWrapper}>
-            <button className="btn btn-outline">
-              View Latest Styles
-            </button>
+            <Link href="/products/all" passHref>
+              <button className="btn btn-outline">
+                View Latest Styles
+              </button>
+            </Link>
           </div>
         </div>
         <div className={classes.productWrapper}>

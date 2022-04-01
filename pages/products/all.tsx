@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import { ProductArray } from "../../components/products/ProductTypes";
 import classes from "../../styles/Products.module.scss";
-const _ = require('lodash/core');
 
 import ProductPreview from "../../components/products/ProductPreview";
 
@@ -11,8 +10,8 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 		<>
 			<h1 className={classes.title}>All Products</h1>
 			<main className={classes.allProductsWrapper}>
-				{products && products.map((product, idx) => 
-					<ProductPreview product={product} key={idx} />
+				{products && products.map(product => 
+					<ProductPreview product={product} key={product.id} />
 					)}
 			</main>
 		</>
