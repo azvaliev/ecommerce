@@ -48,6 +48,10 @@ const allFilterOpts: filterSettings[] = [
 		options: [
 			{
 				value: "",
+				displayValue: "All Editions"
+			},
+			{
+				value: "standard",
 				displayValue: "Standard Edition"
 			},
 			{

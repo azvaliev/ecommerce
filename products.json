@@ -5,7 +5,7 @@
 		"price": 84.99,
 		"discount": 94.99,
 		"description": "Casual yet classy, this coffee-colored suit vest is suitable for all sorts of occasions.",
-		"categories": ["vest", "plain"],
+		"categories": ["vest", "plain", "standard"],
 		"modelIG": "mohamadkhosravi7",
 		"images": [
 			{
@@ -60,7 +60,7 @@
 		"price": 49.99,
 		"discount": false,
 		"description": "Pour up another cup of coffee, because this classic blue will have you ready to tackle Mondays with style.",
-		"categories": ["shirt", "striped"],
+		"categories": ["shirt", "striped", "standard"],
 		"modelIG": "mohamadkhosravi7",
 		"images": [
 			{
@@ -84,7 +84,7 @@
 		"price": 399.99,
 		"discount": false,
 		"description": "A truly versatile suit jacket that will have you suited from any occasion, from dates to Monday meetings.",
-		"categories": ["jacket", "plain"],
+		"categories": ["jacket", "plain", "standard"],
 		"modelIG": "mohamadkhosravi7",
 		"images": [
 			{
@@ -117,7 +117,7 @@
 		"price": 369.99,
 		"discount": false,
 		"description": "Sometimes simplicity is key. This minimal grey suit jacket is easy to match and will keep you slick",
-		"categories": ["jacket", "plain"],
+		"categories": ["jacket", "plain", "standard"],
 		"modelIG": "mohamadkhosravi7",
 		"images": [
 			{
