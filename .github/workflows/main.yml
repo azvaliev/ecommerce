@@ -25,12 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Install deps
         run: npm install
+        
+      - name: Add SWC for Linux
+        run: npm install @next/swc-linux-x64-gnu
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          npm run dev
-          npx cypress open
+      - name: Start server
+        run: npm run dev &
+        
+      - name: Start Cypress..
+        run: npx cypress open
