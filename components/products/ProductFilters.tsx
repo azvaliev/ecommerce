@@ -1,4 +1,4 @@
-import classes from "../../styles/components/ProductFilter.module.scss";
+import classes from "../../styles/modules/ProductFilter.module.scss";
 
 const filterOpts: Array<Array<FilterObj>> = [
 	[
