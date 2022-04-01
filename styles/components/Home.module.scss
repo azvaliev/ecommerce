@@ -1,5 +1,5 @@
-@import 'colors';
-@import 'fonts';
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
 
 $product-height: 60vh;
 

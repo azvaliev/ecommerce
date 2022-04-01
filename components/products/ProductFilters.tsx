@@ -1,4 +1,4 @@
-import classes from "../../styles/ProductFilter.module.scss";
+import classes from "../../styles/components/ProductFilter.module.scss";
 
 const filterOpts: Array<Array<FilterObj>> = [
 	[
@@ -67,6 +67,7 @@ const ProductFilters = () => {
 
 	return (
 		<div className={classes["wrapper-filters"]}>
+			<h4>Filters: </h4>
 			{filterOpts.map((opt, idx) =>
 				<Filter options={opt} key={idx} />
 			)}

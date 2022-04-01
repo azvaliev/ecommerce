@@ -1,3 +1,6 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
 nav {
 	display: flex;
 	flex-direction: column;

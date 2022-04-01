@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Product } from "./ProductTypes";
-import classes from "../../styles/Products.module.scss";
+import classes from "../../styles/components/Products.module.scss";
 import Link from "next/link";
 
 interface Props {

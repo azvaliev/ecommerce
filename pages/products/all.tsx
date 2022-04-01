@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import { ProductArray } from "../../components/products/ProductTypes";
-import classes from "../../styles/Products.module.scss";
+import classes from "../../styles/components/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
 import ProductFilters from "../../components/products/ProductFilters";

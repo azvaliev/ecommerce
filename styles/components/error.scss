@@ -1,3 +1,6 @@
+@use '../abstracts/fonts' as *;
+@use '../abstracts/colors' as *;
+
 .error-wrapper {
 	display: flex;	
 	flex-direction: row;
