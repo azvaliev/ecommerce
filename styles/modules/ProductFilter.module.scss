@@ -1,4 +1,4 @@
-
+@use '../abstracts/fonts' as *;
 
 .wrapper-filters {
 	display: flex;
@@ -6,7 +6,8 @@
 	margin: 0 12vw 2em;
 	width: fit-content;
 
-	h5 {
-		
+	h4 {
+		margin: auto 1.5em auto 0;
+		font-size: $text-lg;
 	}
 }
