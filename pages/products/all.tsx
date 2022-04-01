@@ -5,6 +5,7 @@ import classes from "../../styles/modules/Products.module.scss";
 import ProductPreview from "../../components/products/ProductPreview";
 import ProductFilters from "../../components/products/ProductFilters";
 import { createContext, useReducer } from "react";
+import FilterSortWrapper from "../../components/products/FilterSortWrapper";
 
 // Types
 
@@ -54,7 +55,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 		<>
 			<h1 className={classes.title}>All Products</h1>
 			<filterContext.Provider value={{filterState: filterState, updateFilterState: updateFilterState}}>
-				<ProductFilters />
+				<FilterSortWrapper />
 			</filterContext.Provider>
 			<main className={classes.allProductsWrapper} id="allProductsWrapper">
 				{filteredProducts.length > 0 ? 
