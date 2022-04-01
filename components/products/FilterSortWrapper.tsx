@@ -6,7 +6,7 @@ const FilterSortWrapper = () => {
 	const isMounted = usePortalMountCheck();
 	
 	return isMounted ? createPortal(
-		<div>
+		<div id="wrapper-filter-sort">
 			<ProductFilters />
 		</div>, 
 		document.querySelector("#filterbar")!

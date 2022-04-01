@@ -49,7 +49,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 		);
 
 	return (
-		<>
+		<div className={classes.root}>
 			<h1 className={classes.title}>All Products</h1>
 			<filterContext.Provider value={{filterState: filterState, updateFilterState: updateFilterState}}>
 				<FilterSortWrapper />
@@ -63,7 +63,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 					<h2>No matching products found</h2>
 					}
 			</main>
-		</>
+		</div>
 	)
 }
 export const getStaticProps: GetStaticProps = async (context) => {
