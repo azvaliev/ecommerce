@@ -14,7 +14,7 @@ jobs:
         run: npm install
         
       - name: Add SWC for Linux
-        run: npm install @next/swc-linux-x64-gnu
+        run: npm i -D @swc/cli @swc/core
 
       - name: Start server
         run: npm run dev &
