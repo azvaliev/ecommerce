@@ -43,9 +43,9 @@ nav {
 			font-size: $text-md;
 			font-weight: $font-xbold;
 			color: $accent;
+			transition: 0.5s ease-in-out;
 
 			&:hover {
-				transition: 0.5s ease-in-out;
 				background-color: $accent;
 				color: black;
 				font-weight: $font-xbold;
