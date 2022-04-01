@@ -63,7 +63,8 @@ const allFilterOpts: filterSettings[] = [
 ]
 interface filterSettings {
 	type: string;
-	options: filterObj[]
+	options: filterObj[];
+	id?: number;
 }
 interface filterObj {
 	value: string;
@@ -73,7 +74,7 @@ interface filterProps {
 	allFilterOpts: filterSettings[];
 }
 
-const Filter = ({type, options}: filterSettings) => {
+const Filter = ({type, options, id}: filterSettings) => {
 
 	const {filterState, updateFilterState} = useContext(filterContext);
 
@@ -84,7 +85,7 @@ const Filter = ({type, options}: filterSettings) => {
 	}
 
 	return (
-		<select className={classes["filter"]} onChange={handleUpdateFilterState}>
+		<select className={`filter ${classes["filter"]}`} onChange={handleUpdateFilterState} id={`filter${id}`}>
 			{options.map((setting, idx) => 
 				<option value={setting.value} key={idx}>
 					{setting.displayValue}
@@ -100,7 +101,7 @@ const ProductFilters = () => {
 		<div className={classes["wrapper-filters"]}>
 			<h4>Filters: </h4>
 			{allFilterOpts.map((filter, idx) =>
-				<Filter type={filter.type} options={filter.options} key={idx} />
+				<Filter type={filter.type} options={filter.options} id={idx} key={idx} />
 			)}
 		</div>
 	)

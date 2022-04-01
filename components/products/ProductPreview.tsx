@@ -11,7 +11,7 @@ interface Props {
 const ProductPreview = ({product, key}: Props) => {
 	return (
 		<Link href={`/products/${product.id}`} passHref>
-			<div className={classes["product-wrapper"]} key={key}>
+			<div className={`product ${classes["product-wrapper"]}`} key={key}>
 				<div className={classes["product-image-wrapper"]}>
 					<Image 
 						objectFit="contain"

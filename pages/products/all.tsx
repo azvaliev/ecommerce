@@ -56,7 +56,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 			<filterContext.Provider value={{filterState: filterState, updateFilterState: updateFilterState}}>
 				<ProductFilters />
 			</filterContext.Provider>
-			<main className={classes.allProductsWrapper}>
+			<main className={classes.allProductsWrapper} id="allProductsWrapper">
 				{filteredProducts.length > 0 ? 
 					filteredProducts.map(product => 
 						<ProductPreview product={product} key={product.id} />
@@ -69,7 +69,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 	)
 }
 export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648844176/perseus/products_yhyy0v.json", {
+	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648847984/perseus/products_ksfeqb.json", {
 		method: "GET"
 	})
 	.then(res => res.json());
