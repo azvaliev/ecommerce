@@ -1,42 +1,32 @@
 import { GetStaticProps } from "next";
-import { ProductArray } from "../../components/products/ProductContext";
+import { ProductArray } from "../../components/products/ProductTypes";
 import classes from "../../styles/Products.module.scss";
-import ProductContext from "../../components/products/ProductContext";
-import { useContext, useEffect } from "react";
 const _ = require('lodash/core');
 
-const AllProducts = ({initialProducts}: {initialProducts: ProductArray}) => {
+import ProductPreview from "../../components/products/ProductPreview";
+
+const AllProducts = ({products}: {products: ProductArray}) => {
 	
-	const {products, handleChangeProducts} = useContext(ProductContext);
-
-	useEffect(() => {
-		console.log(initialProducts);
-		if (!_.isEqual(products, initialProducts)) {
-			handleChangeProducts!(initialProducts);
-		}
-	}, [])
-
 	return (
 		<>
 			<h1 className={classes.title}>All Products</h1>
 			<main className={classes.allProductsWrapper}>
 				{products && products.map((product, idx) => 
-					<div className={classes.productWrapper} key={idx}>
-						<h3>{product.title}</h3>
-
-					</div>
+					<ProductPreview product={product} key={idx} />
 					)}
 			</main>
 		</>
 	)
 }
 export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await fetch("https://fakestoreapi.com/products").then(res => res.json());
-	console.log(res);
+	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648780324/perseus/products_pzscfl.json", {
+		method: "GET"
+	})
+	.then(res => res.json());
 
 	return {
 	  props: {
-		initialProducts: res
+		products: res
 	  }, 
 
 	  // Regenerate page
