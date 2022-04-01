@@ -4,23 +4,15 @@ on: [push]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    name: Cypress run
+    runs-on: ubuntu-16.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Add SWC for Linux
-        run: npm i -D @swc/cli @swc/core
-
-      - name: Install deps
-        run: npm install
-
-      - name: Start server
-        run: npm run dev &
-        
+        uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          build: npm run build
+          start: npm run start
+          wait-on: http://localhost:3000
 
