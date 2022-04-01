@@ -1,20 +1,13 @@
 import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import NavItem from "./Navitem";
 import PerseusIcon from "../../public/img/logo/perseus-icon.webp";
 import Link from "next/link";
+import usePortalMountCheck from "../../lib/usePortalMountCheck";
 
 const Navbar = () => {
 
-	const [isMounted, setIsMounted] = useState(false);
-
-	useEffect(() => {
-		setIsMounted(true);
-
-		return () => setIsMounted(false);
-	}, [])
-
+	const isMounted = usePortalMountCheck();
 
 	return isMounted ? createPortal(
 		<nav>
