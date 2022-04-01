@@ -9,12 +9,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install deps
-        run: npm install
         
       - name: Add SWC for Linux
         run: npm i -D @swc/cli @swc/core
+
+      - name: Install deps
+        run: npm install
 
       - name: Start server
         run: npm run dev &
