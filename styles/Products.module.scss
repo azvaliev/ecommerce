@@ -1,0 +1,19 @@
+@import 'fonts';
+
+.title {
+	margin-top: 1em;
+	font-size: $text-4xl;
+	font-weight: $font-xbold;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.allProductsWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-around;
+	.productWrapper {
+		width: 25%;
+	}
+}

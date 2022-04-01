@@ -39,7 +39,7 @@ const Navbar = () => {
 			</div>
 			<ul>
 				<NavItem display="Home" href="/" />
-				<NavItem display="Shop" href="/products" />
+				<NavItem display="Shop" href="/products/all" />
 				<NavItem display="Contact" href="/contact"/>
 				<NavItem display="About" href="/about"/>
 			</ul>
