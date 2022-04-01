@@ -5,13 +5,12 @@ import Link from "next/link";
 
 interface Props {
 	product: Product;
-	key: number;
 }
 
-const ProductPreview = ({product, key}: Props) => {
+const ProductPreview = ({product}: Props) => {
 	return (
 		<Link href={`/products/${product.id}`} passHref>
-			<div className={`product ${classes["product-wrapper"]}`} key={key}>
+			<div className={`product ${classes["product-wrapper"]}`} >
 				<div className={classes["product-image-wrapper"]}>
 					<Image 
 						objectFit="contain"

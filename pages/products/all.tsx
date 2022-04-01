@@ -3,7 +3,6 @@ import { Product, ProductArray } from "../../components/products/ProductTypes";
 import classes from "../../styles/modules/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
-import ProductFilters from "../../components/products/ProductFilters";
 import { createContext, useReducer } from "react";
 import FilterSortWrapper from "../../components/products/FilterSortWrapper";
 
@@ -29,8 +28,7 @@ interface filterContext {
 // Filtering logic
 
 const handleUpdateFilter = (prevFilter: filterOpts, newFilterOpts: filterOpts) => {
-	console.log(newFilterOpts);
-		return {...prevFilter, ...newFilterOpts};
+	return {...prevFilter, ...newFilterOpts};
 }
 
 const checkFilter = (filter: string, product: Product) => {
@@ -49,7 +47,6 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 		checkFilter(filterState.edition!, product) &&
 		checkFilter(filterState.style!, product)
 		);
-	console.log(products)
 
 	return (
 		<>
