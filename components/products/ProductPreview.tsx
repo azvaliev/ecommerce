@@ -9,7 +9,7 @@ interface Props {
 
 const ProductPreview = ({product}: Props) => {
 	return (
-		<Link href={`/products/${product.id}`} passHref>
+		<Link href="/product/[pid]" as={`/product/${product.id}`} passHref>
 			<div className={`product ${classes["product-wrapper"]}`} >
 				<div className={classes["product-image-wrapper"]}>
 					<Image 

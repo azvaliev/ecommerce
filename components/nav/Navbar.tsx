@@ -42,7 +42,7 @@ const Navbar = () => {
 				<NavItem display="About" href="/about"/>
 			</ul>
 		</nav>,
-		document.getElementById("portal")!
+		document.getElementById("nav-portal")!
 	) : null
 }
 
