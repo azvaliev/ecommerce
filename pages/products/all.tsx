@@ -3,7 +3,7 @@ import { Product, ProductArray } from "../../components/products/ProductTypes";
 import classes from "../../styles/modules/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
-import { createContext, useReducer } from "react";
+import { createContext, useMemo, useReducer } from "react";
 import FilterSortWrapper from "../../components/products/FilterSortWrapper";
 
 // Types
@@ -21,8 +21,8 @@ const initialFilter: filterOpts = {
 }
 
 interface filterContext {
-	filterState?: filterOpts;
 	updateFilterState?: (newFilterOpts: filterOpts) => void;
+	updateSortingState?: (newSortingState: string) => void;
 }
 
 // Filtering logic
@@ -38,25 +38,61 @@ const checkFilter = (filter: string, product: Product) => {
 
 export const filterContext = createContext<filterContext>({});
 
+// Sorting logic
+
+const sortItems = (itemA: Product, itemB: Product, sortState: string) => {
+
+	if (sortState.includes("0")) {
+		if (sortState === "0-1") return itemA.price - itemB.price;
+		return itemB.price - itemA.price;	
+
+	} else if (sortState.includes("a")) {
+		if (sortState === "a-z") {
+			if(itemA.title < itemB.title) return -1; 
+			if(itemA.title > itemB.title) return 1; 
+			return 0;
+		}
+		if(itemB.title < itemA.title) return -1; 
+		if(itemB.title > itemA.title) return 1; 
+		return 0;	
+
+	} else {
+		if (sortState === "new-old") return itemB.timestamp - itemA.timestamp; 
+		return itemA.timestamp - itemB.timestamp;
+	}
+}
+
+const handleUpdateSort = (prevState: string, newState: string) => newState;
+
 const AllProducts = ({products}: {products: ProductArray}) => {
 	
 	const [filterState, updateFilterState] = useReducer(handleUpdateFilter, initialFilter);
+	const [sortingState, updateSortingState] = useReducer(handleUpdateSort, "")
 
-	const filteredProducts = products.filter(product => 
-		checkFilter(filterState.productType!, product) &&
-		checkFilter(filterState.edition!, product) &&
-		checkFilter(filterState.style!, product)
-		);
+	const filteredProducts = useMemo(() => 
+		products.filter(product => 
+			checkFilter(filterState.productType!, product) &&
+			checkFilter(filterState.edition!, product) &&
+			checkFilter(filterState.style!, product)
+	), [products, filterState])
+
+	const sortedProducts = useMemo(() =>
+		filteredProducts.sort((a, b) => sortItems(a, b, sortingState))
+	, [filteredProducts, sortingState]);
+	
 
 	return (
 		<div className={classes.root}>
 			<h1 className={classes.title}>All Products</h1>
-			<filterContext.Provider value={{filterState: filterState, updateFilterState: updateFilterState}}>
+			<filterContext.Provider value={{
+				updateFilterState: updateFilterState,
+				updateSortingState: updateSortingState 
+				}}>
 				<FilterSortWrapper />
 			</filterContext.Provider>
 			<main className={classes.allProductsWrapper} id="allProductsWrapper">
-				{filteredProducts.length > 0 ? 
-					filteredProducts.map(product => 
+				{sortedProducts.length > 0 ? 
+					sortedProducts.map(product => 
 						<ProductPreview product={product} key={product.id} />
 					)
 				:
@@ -67,7 +103,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 	)
 }
 export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648847984/perseus/products_ksfeqb.json", {
+	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
 		method: "GET"
 	})
 	.then(res => res.json());

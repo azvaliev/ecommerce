@@ -12,5 +12,6 @@ export interface Product {
 	categories: string[];
 	modelIG: string;
 	images: ProductImage[];
+	timestamp: number;
 }
 export type ProductArray = Array<Product>;

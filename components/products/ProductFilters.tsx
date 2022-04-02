@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from "react";
 import { filterContext } from "../../pages/products/all";
-import classes from "../../styles/modules/ProductFilter.module.scss";
+import classes from "../../styles/modules/ProductFilterSort.module.scss";
 
 const allFilterOpts: filterSettings[] = [
 	{
@@ -76,7 +76,7 @@ interface filterProps {
 
 const Filter = ({type, options, id}: filterSettings) => {
 
-	const {filterState, updateFilterState} = useContext(filterContext);
+	const { updateFilterState } = useContext(filterContext);
 
 	const handleUpdateFilterState = (e: ChangeEvent<HTMLSelectElement>) => {
 		updateFilterState!({
