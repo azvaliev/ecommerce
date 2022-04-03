@@ -18,22 +18,30 @@ nav {
 	.wrapper-icon-logo {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
 		width: 100%;
-		min-height: 11vh;
+		max-height: 11vh;
 		height: fit-content;
 		
+		.wrapper-icon, .wrapper-logo, .cart-icon {
+			position: relative;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
 		.wrapper-icon {
-			position: absolute;
 			height: 11vh;
 			width: 11vh;
 		}
 
 		.wrapper-logo {
-			position: relative;
 			height: 7vh;
 			width: 25vw;
-			margin: auto;
 			border-bottom: 1px solid $accent-primary;
+		}
+		.cart-icon {
+			height: 8vh;
+			width: 8vh;
 		}
 	}
 

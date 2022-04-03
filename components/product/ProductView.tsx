@@ -75,6 +75,9 @@ const ProductView = ({product}: {product: Product}) => {
 					onCountIncrease={() => updateProductDetails({ type: "increment" })}
 					onCountDecrease={() => updateProductDetails({ type: "decrement" })}
 					/>
+				<button className={`btn btn-outline mtop-2 ${classes["add-to-cart"]}`}>
+					Add to Cart
+				</button>
 			</section>
 		</main>
 	): <ErrorPage errorCode={404} errorName="Page Not Found"/>
