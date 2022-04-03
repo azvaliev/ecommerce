@@ -10,7 +10,7 @@ body {
   background-color: $bg-primary;
   font-family: 'Cormorant Garamond', serif;
 }
-button {
+button, p, span, input {
   font-family: 'Cormorant Garamond', serif; 
 }
 
@@ -41,4 +41,12 @@ s::before {
 
 s::after {
   content: " [end of stricken text] ";
+}
+
+.discount {
+  color: $accent-secondary;
+}
+
+.number {
+  font-family: 'Cormorant Garamond', serif; 
 }

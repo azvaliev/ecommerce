@@ -36,7 +36,7 @@ const Sorting = () => {
 	return (
 		<div className={classes["wrapper-sort"]}>
 			<h4>Sorting: </h4>
-			<select onChange={handleChange}>
+			<select onChange={handleChange} className="accent">
 				{sortingOptions.map((option, idx) => 
 					<option value={option.value} key={idx}>
 						{option.displayValue}
