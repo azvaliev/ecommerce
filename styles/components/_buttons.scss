@@ -16,7 +16,7 @@
 
 .btn-primary {
 	background-color: $bg-primary;
-	color: $accent;
+	color: $accent-primary;
 }
 
 .btn-outline {
@@ -32,6 +32,6 @@
 		scale: 1.05;
 		background-color: $bg-primary;
 		font-weight: $font-xbold;
-		color: $accent;
+		color: $accent-primary;
 	}
 }

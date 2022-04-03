@@ -16,14 +16,14 @@ select {
 	padding-right: 2rem;
 
 	outline: none;
-	border: 1px solid $text-main;
+	border: 1px solid $text-primary-light;
 	border-radius: 0.2em;
 
-	color: $text-main;
+	color: $text-primary-light;
 	font-size: $text-sm;
 	font-weight: $font-thin;
 }
 select.accent {
-	border-color: $accent;
-	color: $accent;
+	border-color: $accent-primary;
+	color: $accent-primary;
 }

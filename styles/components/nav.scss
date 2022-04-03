@@ -12,8 +12,8 @@ nav {
 	flex-direction: column;
 	padding: 1em 1em 0;
 	min-height: 20vh;
-	background-color: $bg-nav;
-	border-bottom: 0.1px solid $accent;
+	background-color: $bg-secondary;
+	border-bottom: 0.1px solid $accent-primary;
 	
 	.wrapper-icon-logo {
 		display: flex;
@@ -33,7 +33,7 @@ nav {
 			height: 7vh;
 			width: 25vw;
 			margin: auto;
-			border-bottom: 1px solid $accent;
+			border-bottom: 1px solid $accent-primary;
 		}
 	}
 
@@ -52,11 +52,11 @@ nav {
 			border-top-left-radius: 10px;
 			font-size: $text-md;
 			font-weight: $font-xbold;
-			color: $accent;
+			color: $accent-primary;
 			transition: 0.5s ease-in-out;
 
 			&:hover {
-				background-color: $accent;
+				background-color: $accent-primary;
 				color: black;
 				font-weight: $font-xbold;
 			}

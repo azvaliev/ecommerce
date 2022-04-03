@@ -28,7 +28,7 @@
 		top: 40%;
 		height: fit-content;
 		flex-direction: column;
-		color: $text-main;
+		color: $text-primary-light;
 		h1 {
 			font-size: $text-5xl;
 			margin: 0;
@@ -50,7 +50,7 @@
 			.price {
 				margin-top: 10px;
 				font-size: $text-3xl;
-				color: $text-primary;
+				color: $text-secondary;
 			}
 		}
 		.select-size {
