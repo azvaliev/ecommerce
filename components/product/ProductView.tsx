@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useReducer } from "react";
 import classes from "../../styles/modules/Product.module.scss";
+import ErrorPage from "../ErrorPage";
 import { Product } from "../products/ProductTypes";
 import Counter from "./Counter";
 
@@ -31,7 +32,7 @@ const ProductView = ({product}: {product: Product}) => {
 	
 	const [productDetails, updateProductDetails] = useReducer(handleUpdateDetails, initialProductDetails)
 
-	return (
+	return product ? (
 		<main className={classes["wrapper-product"]}>
 			<div className={classes["wrapper-image-col"]}>
 				{product.images.map((image, idx) =>
@@ -76,7 +77,7 @@ const ProductView = ({product}: {product: Product}) => {
 					/>
 			</section>
 		</main>
-	)
+	): <ErrorPage errorCode={404} errorName="Page Not Found"/>
 }
 
 export default ProductView;
