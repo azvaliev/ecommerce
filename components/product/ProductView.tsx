@@ -17,7 +17,7 @@ const handleUpdateDetails = (prevState: productDetails, newData: { type?: string
 		case ("increment"): 
 			return {...prevState, quantity: prevState.quantity + 1}
 		default: 
-			if (prevState.quantity > 1) return {...prevState, quantity: prevState.quantity + 1}	
+			if (prevState.quantity > 1) return {...prevState, quantity: prevState.quantity - 1}	
 			return {...prevState, quantity: prevState.quantity}	
 	}
 

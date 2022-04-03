@@ -4,13 +4,13 @@
 div.count {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	width: 75%;
+	margin-right: auto;
 	border: 1px solid white;
 	border-radius: 0.2em;
 	height: fit-content;
 	button, .counter {
 		width: 33.333%;
-		font-size: $text-4xl;
 		color: $text-primary-light;
 		text-align: center;
 		padding: 0;
@@ -19,7 +19,8 @@ div.count {
 	.counter {
 		border-right: 1px solid white;
 		border-left: 1px solid white;
-
+		font-size: $text-xl;
+		padding: 0.3rem 0;
 	}
 	div {
 		display: flex;
