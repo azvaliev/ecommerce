@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import { Product, ProductArray } from "../../components/products/ProductTypes";
-import classes from "../../styles/modules/Products.module.scss";
+import classes from "../../styles/pages/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
 import { createContext, useMemo, useReducer } from "react";

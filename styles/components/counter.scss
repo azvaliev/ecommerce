@@ -1,0 +1,32 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+div.count {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 0.2em;
+	button, .counter {
+		width: 33.333%;
+		font-size: $text-4xl;
+		color: $text-main;
+		text-align: center;
+		padding: 0;
+		margin: auto;
+		line-height: 1;
+	}
+	.counter {
+		border-right: 1px solid white;
+		border-left: 1px solid white;
+
+	}
+	.text {
+		margin: auto;
+		margin-top: 20px;
+	}
+	button {
+		background: none;
+		border: none;
+	}
+}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Product } from "./ProductTypes";
-import classes from "../../styles/modules/Products.module.scss";
+import classes from "../../styles/pages/Products.module.scss";
 import Link from "next/link";
 
 interface Props {
@@ -24,7 +24,7 @@ const ProductPreview = ({product}: Props) => {
 				</h3>
 				<span className={classes["product-prices"]}>
 					{product.discount && 
-						<h4 className={classes["product-discount"]}>
+						<h4 className={`discount pricing ${classes["product-discount"]}`}>
 							<s>
 								${product.discount}
 							</s>

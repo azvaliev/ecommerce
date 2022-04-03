@@ -1,0 +1,13 @@
+@mixin margin($margin, $value){
+	margin-#{$margin}: $value;
+  }
+  
+  @for $i from 1 through 20 {
+	@each $margin in top, left, bottom, right {
+  
+	  .m#{$margin}-#{$i}{
+		@include margin($margin, 0.5rem * $i) 
+	  }
+  
+	}
+  }

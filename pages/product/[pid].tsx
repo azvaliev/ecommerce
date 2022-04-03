@@ -1,18 +1,12 @@
 import { GetStaticProps } from "next";
-import Image from "next/image";
+import ProductView from "../../components/product/ProductView";
 import { Product, ProductArray } from "../../components/products/ProductTypes";
+import classes from "../../styles/modules/Product.module.scss";
 
-const Product = ({product}: {product: Product}) => {
+const ProductDisplay = ({product}: {product: Product}) => {
 	return (
-		<div>
-			<Image 
-				src={product.images[0].src}
-				alt={product.images[0].alt} 
-				layout="fixed" 
-				height="500" 
-				width="500" 
-				priority
-				/>
+		<div className={classes["wrapper-page-product"]}>
+			<ProductView product={product} />
 		</div>
 	)
 }
@@ -54,4 +48,4 @@ export const getStaticPaths = async() => {
 	};
   }
 
-export default Product;
+export default ProductDisplay;
