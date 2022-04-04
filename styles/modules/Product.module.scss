@@ -2,7 +2,7 @@
 @use '../abstracts/colors' as *;
 
 .wrapper-page-product {
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
 	padding: 3% 0;
 }
@@ -16,7 +16,8 @@
 
 		.wrapper-image {
 			position: relative;
-			width: 50vw;
+			width: 35vw;
+			margin-right: 2vw;
 			height: 42vw;
 			margin-bottom: 0.5vw;
 
@@ -55,16 +56,28 @@
 			margin-top: 1rem;
 		}
 	}
-		.add-to-cart {
-			border: 1px solid $accent-primary;
-			color: $accent-primary;
-			width: 70%;
-			margin-right: auto;
-			&:hover {
-				background: $accent-primary;
-				border: none;
-				color: $text-primary-dark;
-				scale: 1;
-			}
+	.add-to-cart {
+		border: 1px solid $accent-primary;
+		color: $accent-primary;
+		width: 70%;
+		margin-right: auto;
+		&:hover {
+			background: $accent-primary;
+			border: none;
+			color: $text-primary-dark;
+			scale: 1;
 		}
+	}
+}
+.reccomended-wrapper {
+	margin-top: 7vh;
+	h2 {
+		font-size: $text-3xl;
+		text-align: center;
+	}
+	.reccomended {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 5vw;
+	}
 }
