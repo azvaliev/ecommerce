@@ -1,0 +1,58 @@
+@import '../abstracts/fonts';
+@import '../abstracts/colors';
+
+.root {
+	padding-bottom: 15vh;
+
+	.title {
+		margin: 0.75em auto 1em;
+		font-size: $text-4xl;
+		font-weight: $font-xbold;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	.allProductsWrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: space-around;
+		margin: 0 10vw;
+	}
+
+}
+.product-wrapper {
+	width: 16vw;
+	box-sizing: border-box;
+	margin: 0 2%;
+	transition: 0.5s ease-in-out;
+
+	&:hover {
+		scale: 1.05;
+	}
+
+	.product-image-wrapper {
+		position: relative;
+		width: 100%;
+		height: 37vh;
+	}
+	h3 {
+		margin-bottom: 0;
+		font-size: $text-md;
+		font-weight: $font-xbold;
+	}
+	.product-prices {
+		display: flex;
+		font-size: $text-lg;
+		
+		.product-discount {
+			margin-right: 1.5ch;
+		}
+
+		h4 {
+			font-family: 'Lato', sans-serif;
+			font-weight: $font-thin;
+			margin-top: 0.3em;
+		}
+	}
+}

@@ -1,8 +1,23 @@
+// main background color
 $bg-primary: #131615;
-// $primary: #d8d8d8;
-// $secondary: ;
-$bg-nav:  #1D2420;
-$accent: #ebe1b5;
+
+// background color for navs
+$bg-secondary:  #1D2420;
+
+// accent for some borders and backgrounds
+$accent-primary: #ebe1b5;
+
+// secondary accent - used rarely
 $accent-secondary: #AF5B50;
 
-$text-primary: #ebe1b5;
+// Most common text on the page
+$text-primary-light: rgb(223, 223, 223);
+
+// Text for light backgrounds
+$text-primary-dark: #131615; 
+
+// Text for headings, prices
+$text-secondary: #ebe1b5;
+
+// Text used for discount pricing
+$text-accent: #AF5B50; 

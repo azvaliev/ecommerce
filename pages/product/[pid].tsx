@@ -1,18 +1,22 @@
+import { match } from "assert";
 import { GetStaticProps } from "next";
-import Image from "next/image";
+import ProductView from "../../components/product/ProductView";
+import ProductPreview from "../../components/products/ProductPreview";
 import { Product, ProductArray } from "../../components/products/ProductTypes";
+import styles from "../../styles/modules/Product.module.scss";
 
-const Product = ({product}: {product: Product}) => {
+const ProductDisplay = ({product, reccomendedProducts}: {product: Product, reccomendedProducts: Product[]}) => {
 	return (
-		<div>
-			<Image 
-				src={product.images[0].src}
-				alt={product.images[0].alt} 
-				layout="fixed" 
-				height="500" 
-				width="500" 
-				priority
-				/>
+		<div className={styles["wrapper-page-product"]}>
+			<ProductView product={product} />
+			<section className={styles["reccomended-wrapper"]}>
+				<h2>Reccomended Products</h2>
+				<div className={`reccomended ${styles["reccomended"]}`}>
+					{reccomendedProducts && reccomendedProducts.map((rec) => 
+						<ProductPreview product={rec} key={product.id} />
+						)}
+				</div>
+			</section>
 		</div>
 	)
 }
@@ -20,18 +24,39 @@ const Product = ({product}: {product: Product}) => {
 export const getStaticProps: GetStaticProps = async(context) => {
 	
 	const { pid } = context.params!; 
-	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
+	const [res, reccomendedProducts] = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
 		method: "GET"
 	})
 	.then(res => res.json())
-	.then((res: ProductArray) => 
-		res.find(res => res.id === Number(pid))
-	)
+	.then((res: ProductArray) => {
+		const product = res.find(res => res.id === Number(pid));
+		const reccomendedProducts: Product[] = [];
+		reccomendedProducts.push(res[res.length - 1]);
+		res.forEach((item: Product) => {
+			if (reccomendedProducts.length < 3 && 
+				item.categories.includes(product!.categories[0]) &&
+				item.id !== product!.id) {
+				reccomendedProducts.push(item);
+			}
+		});
+		if (reccomendedProducts.length < 3) {
+			const matching = res.filter(item => item.categories.includes(product!.categories[1]));
+			matching.forEach(match => {
+					if (!reccomendedProducts.includes(match) && 
+					reccomendedProducts.length < 3 &&
+					product!.id !== match.id) { 
 
+						reccomendedProducts.push(match);
+					}
+			});
+		}
+		return [product, reccomendedProducts]
+	})
 
 	return {
 		props: {
-			product: res
+			product: res,
+			reccomendedProducts: reccomendedProducts
 		},
 		revalidate: 10
 	}
@@ -45,13 +70,11 @@ export const getStaticPaths = async() => {
 	.then(res => res.json())	
 	.then((res: ProductArray) => {
 		return res.map(res => ( { params: { pid: res.id.toString()} }))
-	}
-)
-
+	})
 	return {
 	  paths: res,
 	  fallback: true
 	};
   }
 
-export default Product;
+export default ProductDisplay;

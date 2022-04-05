@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import classes from '../styles/modules/Home.module.scss'
+import classes from '../styles/pages/Home.module.scss'
 import BackgroundImage from "../public/img/models/man-in-suit-crossing-street.jpg"
 import Link from 'next/link'
 

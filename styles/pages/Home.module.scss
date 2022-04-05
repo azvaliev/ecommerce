@@ -8,12 +8,12 @@ $product-height: 60vh;
 		display: flex;
 		height: $product-height;
 		justify-content: space-between;
-		background-color: $bg-nav;
+		background-color: $bg-secondary;
 		.introText {
 			z-index: 20;
 			margin: auto 6em;
 			padding: 2em 2em;
-			background-color: adjust-color($accent, $alpha: -0.01);
+			background-color: adjust-color($accent-primary, $alpha: -0.01);
 			border-radius: 2em;
 			color: black;
 			h1 {

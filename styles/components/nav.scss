@@ -12,27 +12,36 @@ nav {
 	flex-direction: column;
 	padding: 1em 1em 0;
 	min-height: 20vh;
-	background-color: $bg-nav;
+	background-color: $bg-secondary;
+	border-bottom: 0.1px solid $accent-primary;
 	
 	.wrapper-icon-logo {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
 		width: 100%;
-		min-height: 11vh;
+		max-height: 11vh;
 		height: fit-content;
 		
+		.wrapper-icon, .wrapper-logo, .cart-icon {
+			position: relative;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
 		.wrapper-icon {
-			position: absolute;
 			height: 11vh;
 			width: 11vh;
 		}
 
 		.wrapper-logo {
-			position: relative;
 			height: 7vh;
 			width: 25vw;
-			margin: auto;
-			border-bottom: 1px solid $accent;
+			border-bottom: 1px solid $accent-primary;
+		}
+		.cart-icon {
+			height: 8vh;
+			width: 8vh;
 		}
 	}
 
@@ -51,11 +60,11 @@ nav {
 			border-top-left-radius: 10px;
 			font-size: $text-md;
 			font-weight: $font-xbold;
-			color: $accent;
+			color: $accent-primary;
 			transition: 0.5s ease-in-out;
 
 			&:hover {
-				background-color: $accent;
+				background-color: $accent-primary;
 				color: black;
 				font-weight: $font-xbold;
 			}

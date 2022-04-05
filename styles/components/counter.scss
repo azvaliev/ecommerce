@@ -1,0 +1,36 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
+div.count {
+	display: flex;
+	flex-direction: row;
+	width: 75%;
+	margin-right: auto;
+	border: 1px solid white;
+	border-radius: 0.2em;
+	height: fit-content;
+	button, .counter {
+		width: 33.333%;
+		color: $text-primary-light;
+		text-align: center;
+		padding: 0;
+		margin: auto;
+	}
+	.counter {
+		border-right: 1px solid white;
+		border-left: 1px solid white;
+		font-size: $text-xl;
+		padding: 0.3rem 0;
+	}
+	div {
+		display: flex;
+		width: 33%;
+		background: none;
+		border: none;
+
+		svg {
+			height: 5vh;
+			margin: auto;
+		}
+	}
+}

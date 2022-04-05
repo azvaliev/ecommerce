@@ -11,15 +11,19 @@ select {
 	background-position-y: 5px;
 	
 	height: fit-content;
-	margin-right: 2rem;
+	margin: 0;
 	padding: 1.1rem;
 	padding-right: 2rem;
 
 	outline: none;
-	border: 1px solid $accent;
+	border: 1px solid $text-primary-light;
 	border-radius: 0.2em;
 
-	color: $accent;
+	color: $text-primary-light;
 	font-size: $text-sm;
 	font-weight: $font-thin;
+}
+select.accent {
+	border-color: $accent-primary;
+	color: $accent-primary;
 }
