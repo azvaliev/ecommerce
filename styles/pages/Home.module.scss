@@ -1,5 +1,4 @@
-@use '../abstracts/colors' as *;
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
 $product-height: 60vh;
 
@@ -37,6 +36,36 @@ $product-height: 60vh;
 			z-index: 10;
 			width: 100vw;
 			height: $product-height;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.main {
+		.productHighlight {
+			flex-direction: column-reverse;
+			height: auto;
+			.introText {
+				margin: 1vh 5vw;
+				text-align: center;
+				h1 {
+					font-size: $text-4xl;
+				}
+				span {
+					font-size: $text-lg;
+				}
+				.buttonWrapper {
+					margin: 1em 0 0;
+					color: black;
+				}
+				a {
+					color: black;
+				}
+			}
+			.productWrapper {
+				position: relative;
+				height: $product-height / 3.5;
+			}
 		}
 	}
 }
