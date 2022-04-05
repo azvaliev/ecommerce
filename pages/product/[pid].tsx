@@ -12,7 +12,7 @@ const ProductDisplay = ({product, reccomendedProducts}: {product: Product, recco
 			<section className={styles["reccomended-wrapper"]}>
 				<h2>Reccomended Products</h2>
 				<div className={`reccomended ${styles["reccomended"]}`}>
-					{reccomendedProducts.map((rec) => 
+					{reccomendedProducts && reccomendedProducts.map((rec) => 
 						<ProductPreview product={rec} key={product.id} />
 						)}
 				</div>
@@ -30,7 +30,6 @@ export const getStaticProps: GetStaticProps = async(context) => {
 	.then(res => res.json())
 	.then((res: ProductArray) => {
 		const product = res.find(res => res.id === Number(pid));
-		console.log("product is", product);
 		const reccomendedProducts: Product[] = [];
 		reccomendedProducts.push(res[res.length - 1]);
 		res.forEach((item: Product) => {
