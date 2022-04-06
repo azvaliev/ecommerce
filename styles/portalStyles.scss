@@ -1,4 +1,4 @@
-@use 'abstracts/colors' as *;
+@use 'abstracts/' as *;
 
 #filterbar {
 	position: fixed;
@@ -12,5 +12,22 @@
 		flex-direction: row;
 		margin: auto 12vw;
 		padding: 3vh 0;
+	}
+}
+
+@media (max-width: 768px) {
+	#filterbar #wrapper-filter-sort {
+		justify-content: space-between;
+		padding: 1vh 0;
+		h4 {
+			font-size: $text-xl;
+			margin: auto;
+			margin-left: 0;
+		}
+		svg {
+			height: 8vh;
+			margin: auto;
+			margin-right: 0;
+		}
 	}
 }
