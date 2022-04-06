@@ -1,5 +1,4 @@
-@import '../abstracts/fonts';
-@import '../abstracts/colors';
+@use '../abstracts/' as *;
 
 .root {
 	padding-bottom: 15vh;
@@ -53,6 +52,38 @@
 			font-family: 'Lato', sans-serif;
 			font-weight: $font-thin;
 			margin-top: 0.3em;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.root {
+		.allProductsWrapper {
+			margin: 0 2vw;
+			align-content: space-between;
+		}
+		.title {
+			margin: 0.5em auto 1em;
+		}
+	}
+	.product-wrapper {
+		width: 44vw;
+		.product-image-wrapper {
+			height: 28vh;
+		}
+		.product-prices {
+			flex-direction: row-reverse;
+			margin-right: auto;
+			width: fit-content;
+
+			h4 {
+				font-size: $text-md;
+			}
+			.product-discount {
+				font-size: $text-sm;
+				margin-right: auto;
+				margin-left: 1ch;
+			}
 		}
 	}
 }
