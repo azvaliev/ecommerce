@@ -13,17 +13,14 @@
 
 	.allProductsWrapper {
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
-		align-content: space-around;
+		justify-content: space-between;
 		margin: 0 10vw;
 	}
-
 }
 .product-wrapper {
 	width: 16vw;
 	box-sizing: border-box;
-	margin: 0 2%;
 	transition: 0.5s ease-in-out;
 
 	&:hover {
@@ -43,7 +40,7 @@
 	.product-prices {
 		display: flex;
 		font-size: $text-lg;
-		
+
 		.product-discount {
 			margin-right: 1.5ch;
 		}
@@ -56,33 +53,50 @@
 	}
 }
 
+@media (max-width: $large) {
+	.root {
+		padding-bottom: 20vh;
+		.product-wrapper {
+			width: 30%;
+			.product-image-wrapper {
+				height: 35vh;
+				width: 100%;
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
 @media (max-width: $mobile) {
 	.root {
+		padding-bottom: 15vh;
 		.allProductsWrapper {
+			justify-content: space-around;
 			margin: 0 2vw;
-			align-content: space-between;
 		}
 		.title {
 			margin: 0.5em auto 1em;
 		}
-	}
-	.product-wrapper {
-		width: 44vw;
-		.product-image-wrapper {
-			height: 28vh;
-		}
-		.product-prices {
-			flex-direction: row-reverse;
-			margin-right: auto;
-			width: fit-content;
 
-			h4 {
-				font-size: $text-md;
+		.product-wrapper {
+			width: 40%;
+			.product-image-wrapper {
+				height: 28vh;
 			}
-			.product-discount {
-				font-size: $text-sm;
+			.product-prices {
+				flex-direction: row-reverse;
 				margin-right: auto;
-				margin-left: 1ch;
+				width: fit-content;
+
+				h4 {
+					font-size: $text-md;
+				}
+				.product-discount {
+					font-size: $text-sm;
+					margin-right: auto;
+					margin-left: 1ch;
+				}
 			}
 		}
 	}
