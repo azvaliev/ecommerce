@@ -27,7 +27,7 @@
 	#filterbar #wrapper-filter-sort {
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 1vh 4vw;
+		padding: 1.5vh 4vw;
 		h4 {
 			font-size: $text-xl;
 			margin: auto;
@@ -35,8 +35,14 @@
 		}
 		svg {
 			height: 8vh;
+			width: 8vh;
 			margin: auto;
 			margin-right: 0;
+		}
+		svg.open {
+			position: absolute;
+			top: 1vh;
+			right: 1vh;
 		}
 	}
 	#filterbar > #wrapper-filter-sort.fullscreen {
