@@ -6,17 +6,26 @@
 	#wrapper-filter-sort {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-around;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		margin: 0;
-		padding: 3vh 12vw;
+		margin: 0 auto;
+		padding: 3vh 0;
 		background-color: $bg-secondary;
+	}
+}
+@media (max-width: $large) {
+	#filterbar #wrapper-filter-sort {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
 @media (max-width: $mobile) {
 	#filterbar #wrapper-filter-sort {
+		flex-direction: row;
 		justify-content: space-between;
 		padding: 1vh 4vw;
 		h4 {
