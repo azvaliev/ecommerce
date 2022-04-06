@@ -1,6 +1,7 @@
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
-.wrapper-filters, .wrapper-sort {
+.wrapper-filters,
+.wrapper-sort {
 	display: flex;
 	flex-direction: row;
 	width: fit-content;
@@ -16,4 +17,25 @@
 
 .filter {
 	margin-right: 1rem;
+}
+
+@media (max-width: $mobile) {
+	.wrapper-filters,
+	.wrapper-sort {
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+		h4 {
+			margin: auto !important;
+			text-align: center;
+		}
+	}
+	.wrapper-sort {
+		margin-top: 10%;
+	}
+	.filter,
+	.sort {
+		width: 75vw;
+		margin: 1vh 0;
+	}
 }
