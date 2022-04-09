@@ -76,7 +76,7 @@ interface filterProps {
 
 const Filter = ({type, options, id}: filterSettings) => {
 
-	const { updateFilterState } = useContext(filterContext);
+	const { filterState, updateFilterState } = useContext(filterContext);
 
 	const handleUpdateFilterState = (e: ChangeEvent<HTMLSelectElement>) => {
 		updateFilterState!({
@@ -86,8 +86,12 @@ const Filter = ({type, options, id}: filterSettings) => {
 
 	return (
 		<select className={`filter accent ${classes["filter"]}`} onChange={handleUpdateFilterState} id={`filter${id}`}>
-			{options.map((setting, idx) => 
-				<option value={setting.value} key={idx}>
+			{options.map((setting) => 
+				<option 
+					value={setting.value}
+					key={setting.value}
+					selected={setting.value === filterState![type]}
+					>
 					{setting.displayValue}
 				</option>
 			)}

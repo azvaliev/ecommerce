@@ -34,7 +34,7 @@ const sortingOptions = [
 ];
 
 const Sorting = () => {
-	const { updateSortingState } = useContext(filterContext);
+	const { sortingState, updateSortingState } = useContext(filterContext);
 
 	const handleChange = (e: ChangeEvent<HTMLSelectElement>) =>
 		updateSortingState!(e.target.value);
@@ -44,7 +44,11 @@ const Sorting = () => {
 			<h4>Sorting: </h4>
 			<select onChange={handleChange} className={`accent ${classes['sort']}`}>
 				{sortingOptions.map((option, idx) => (
-					<option value={option.value} key={idx}>
+					<option
+						value={option.value}
+						key={idx}
+						selected={option.value === sortingState}
+						>
 						{option.displayValue}
 					</option>
 				))}
