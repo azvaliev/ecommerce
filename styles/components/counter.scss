@@ -1,5 +1,4 @@
-@use '../abstracts/colors' as *;
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
 div.count {
 	display: flex;
@@ -32,5 +31,11 @@ div.count {
 			height: 5vh;
 			margin: auto;
 		}
+	}
+}
+
+@media (max-width: $mobile) {
+	div.count {
+		width: 100%;
 	}
 }

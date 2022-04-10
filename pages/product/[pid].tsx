@@ -1,4 +1,3 @@
-import { match } from "assert";
 import { GetStaticProps } from "next";
 import ProductView from "../../components/product/ProductView";
 import ProductPreview from "../../components/products/ProductPreview";
