@@ -42,12 +42,15 @@ const Sorting = () => {
 	return (
 		<div className={classes['wrapper-sort']}>
 			<h4>Sorting: </h4>
-			<select onChange={handleChange} className={`accent ${classes['sort']}`}>
+			<select 
+				onChange={handleChange}
+				className={`accent ${classes['sort']}`}
+				defaultValue={sortingOptions.find(option => option.value === sortingState)?.value}
+				>
 				{sortingOptions.map((option, idx) => (
 					<option
 						value={option.value}
 						key={idx}
-						selected={option.value === sortingState}
 						>
 						{option.displayValue}
 					</option>

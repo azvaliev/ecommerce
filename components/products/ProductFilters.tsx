@@ -85,12 +85,16 @@ const Filter = ({type, options, id}: filterSettings) => {
 	}
 
 	return (
-		<select className={`filter accent ${classes["filter"]}`} onChange={handleUpdateFilterState} id={`filter${id}`}>
+		<select 
+			className={`filter accent ${classes["filter"]}`}
+			onChange={handleUpdateFilterState}
+			defaultValue={options.find(setting => setting.value === filterState![type])?.value}
+			id={`filter${id}`}
+			>
 			{options.map((setting) => 
 				<option 
 					value={setting.value}
 					key={setting.value}
-					selected={setting.value === filterState![type]}
 					>
 					{setting.displayValue}
 				</option>
