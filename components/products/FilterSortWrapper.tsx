@@ -4,17 +4,27 @@ import useMobileCheck from '../../lib/useMobileCheck';
 import ProductFilters from './ProductFilters';
 import Sorting from './Sorting';
 import useStateToggle from '../../lib/useStateToggle';
+import { useState } from 'react';
 
 const FilterSortWrapper = () => {
 	const isMounted = usePortalMountCheck();
 	const isMobile = useMobileCheck();
 	const [sortPageOpen, toggleSortPageOpen] = useStateToggle(false);
+	const [closeAnimLoading, setCloseAnimLoading] = useState(false);
+
+	const handleCloseAnim = () => {
+		setCloseAnimLoading(true);
+		setTimeout(() => {
+			toggleSortPageOpen();
+			setCloseAnimLoading(false);
+		}, 600);
+	}
 
 	return isMounted
 		? createPortal(
 				<div
 					id="wrapper-filter-sort"
-					className={sortPageOpen && isMobile ? 'fullscreen' : ''}
+					className={closeAnimLoading ? "fullscreen bar" : sortPageOpen && isMobile ? "fullscreen" : ""}
 				>
 					{!isMobile || sortPageOpen ? (
 						<>
@@ -24,7 +34,7 @@ const FilterSortWrapper = () => {
 									aria-label="Close Sort / Filter Menu"
 									viewBox="0 0 24 24"
 									fill="#ebe1b5"
-									onClick={toggleSortPageOpen}
+									onClick={handleCloseAnim}
 									className="open"
 								>
 									<path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
