@@ -24,6 +24,7 @@
 	transition: 0.5s ease-in-out;
 
 	&:hover {
+		transform: scale(1.05);
 		scale: 1.05;
 	}
 
@@ -81,6 +82,7 @@
 
 		.product-wrapper {
 			width: 40%;
+			padding-bottom: 4vh;
 			.product-image-wrapper {
 				height: 28vh;
 			}
@@ -99,5 +101,23 @@
 				}
 			}
 		}
+	}
+	.product-prices {
+		flex-direction: row-reverse;
+		width: fit-content;
+		margin-right: auto;
+		h4 {
+			margin: 0;
+			font-size: $text-md;
+		}
+		h4.product-discount {
+			font-size: $text-sm;
+			margin: auto;
+			margin-left: 1ch;
+		}
+	}
+	
+	.product-wrapper {
+		width: 45%;
 	}
 }
