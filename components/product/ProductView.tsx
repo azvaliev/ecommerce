@@ -3,7 +3,7 @@ import { useReducer } from "react";
 import classes from "../../styles/modules/Product.module.scss";
 import ErrorPage from "../ErrorPage";
 import { Product } from "../products/ProductTypes";
-import Counter from "./Counter";
+import Counter from "./QuantityCounter";
 
 
 interface productDetails {

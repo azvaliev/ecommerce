@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext } from 'react';
-import { filterContext } from '../../pages/products/all';
+import { filterContext } from '../../../pages/products/all';
 import classes from '../../styles/modules/ProductFilterSort.module.scss';
 
 const sortingOptions = [

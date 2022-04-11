@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext } from "react";
-import { filterContext } from "../../pages/products/all";
+import { filterContext } from "../../../pages/products/all";
 import classes from "../../styles/modules/ProductFilterSort.module.scss";
 
 const allFilterOpts: filterSettings[] = [
@@ -62,16 +62,13 @@ const allFilterOpts: filterSettings[] = [
 	}	
 ]
 interface filterSettings {
-	type: string;
+	type: "productType" | "style" | "edition";
 	options: filterObj[];
 	id?: number;
 }
 interface filterObj {
 	value: string;
 	displayValue: string;
-}
-interface filterProps {
-	allFilterOpts: filterSettings[];
 }
 
 const Filter = ({type, options, id}: filterSettings) => {

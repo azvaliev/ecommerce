@@ -4,7 +4,7 @@ import classes from "../../styles/pages/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
 import { createContext, useMemo, useReducer } from "react";
-import FilterSortWrapper from "../../components/products/FilterSortWrapper";
+import FilterSortWrapper from "../../components/products/filter-sort/FilterSortWrapper";
 
 // Types
 

@@ -1,9 +1,9 @@
 import { createPortal } from 'react-dom';
-import usePortalMountCheck from '../../lib/usePortalMountCheck';
-import useMobileCheck from '../../lib/useMobileCheck';
+import usePortalMountCheck from '../../../lib/usePortalMountCheck';
+import useMobileCheck from '../../../lib/useMobileCheck';
 import ProductFilters from './ProductFilters';
 import Sorting from './Sorting';
-import useStateToggle from '../../lib/useStateToggle';
+import useStateToggle from '../../../lib/useStateToggle';
 import { useState } from 'react';
 
 const FilterSortWrapper = () => {
