@@ -19,6 +19,7 @@ products.json
 # misc
 .DS_Store
 *.pem
+.dccache
 
 # debug
 npm-debug.log*
