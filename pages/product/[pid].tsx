@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async(context) => {
 	.then((res: ProductArray) => {
 		const product = res.find(res => res.id === Number(pid));
 		const reccomendedProducts: Product[] = [];
-		reccomendedProducts.push(res[res.length - 1]);
 		res.forEach((item: Product) => {
 			if (reccomendedProducts.length < 3 && 
 				item.categories.includes(product!.categories[0]) &&
@@ -44,7 +43,7 @@ export const getStaticProps: GetStaticProps = async(context) => {
 			}
 		});
 		if (reccomendedProducts.length < 3) {
-			const matching = res.filter(item => item.categories.includes(product!.categories[1]));
+			const matching = res.filter(item => item.categories.includes(product!.categories[2]));
 			matching.forEach(match => {
 					if (!reccomendedProducts.includes(match) && 
 					reccomendedProducts.length < 3 &&
