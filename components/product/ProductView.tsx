@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useReducer } from "react";
 import classes from "../../styles/modules/Product.module.scss";
 import ErrorPage from "../ErrorPage";
-import { Product } from "../products/ProductTypes";
+import { Product } from "../ProductTypes";
 import Counter from "./QuantityCounter";
 
 
