@@ -36,6 +36,7 @@ const ProductView = ({product}: {product: Product}) => {
 		<main className={classes["wrapper-product"]}>
 			<div className={classes["wrapper-image-col"]}>
 				{product.images.map((image, idx) =>
+					idx < 2 &&
 					<div className={classes["wrapper-image"]} key={idx}>
 						<Image 
 							src={image.src}
