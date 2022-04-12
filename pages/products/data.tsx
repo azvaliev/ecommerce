@@ -4,7 +4,7 @@ import useFetch from "../../lib/useFetch";
 import useMountCheck from "../../lib/useMountCheck";
 
 const ProductData = () => {
-	const {res, isLoading} = useFetch<ProductArray>("https://perseus-five.vercel.app/api/products", "json");
+	const {res, isLoading} = useFetch<ProductArray>("/api/products", "json");
 	const isMounted = useMountCheck();
 
 	return isMounted ? createPortal(
@@ -12,7 +12,7 @@ const ProductData = () => {
 			{isLoading ? 
 				<div>Data loading...</div>
 			:
-				<pre>{res}</pre>}
+				<pre className="json">{JSON.stringify(res, null, 2)}</pre>}
 		</div>,
 		document.getElementById("data-portal")!
 	): null
