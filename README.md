@@ -2,21 +2,46 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+```bash
+git clone https://github.com/azvaliev/ecommerce
+cd ecommerce
+```
+
+### Install Dependencies
+
+```bash
+npm install 
+# or
+yarn install
+```
+
+## Theming
+The theme colors is managed in `styles/abstracts/_colors.scss` with comments to guide.
+
+Change to your liking!
+
+## Products Endpoint
+
+Create a .env.local in the root folder
+
+```bash
+touch .env.local
+```
+
+Populate this file with an PRODUCTS_ENDPOINT variable set to whatever product endpoint you may desire to use.
+You can see how I've shaped the data [here](https://perseus-five.vercel.app/api/products)
+
+```
+PRODUCTS_ENDPOINT=https://perseus-five.vercel.app/api/products
+```
+
+## Local Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
