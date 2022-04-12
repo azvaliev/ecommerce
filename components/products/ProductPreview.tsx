@@ -17,6 +17,9 @@ const ProductPreview = ({ product }: Props) => {
 						src={product.images[0].src}
 						alt={product.title}
 						layout="fill"
+						sizes="40vw"
+						quality={40}
+						priority={product.id <= 4 && true}
 					/>
 				</div>
 				<h3>{product.title}</h3>
