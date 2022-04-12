@@ -10,6 +10,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="theme-color" content={theme.tabColor} />
+        <meta name="msapplication-TileColor" content={theme.tabColor}/>
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color={theme.tabColor}/>
       </Head>
       <Navbar />
       <Component {...pageProps} />

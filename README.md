@@ -43,6 +43,11 @@ npm run dev
 yarn dev
 ```
 
+## Favicons
+
+I generated the favicons for this project using [Real Favicon Generator](https://realfavicongenerator.net).
+If you wish to use your own, you may replace all the files in `/public/icons/`
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
