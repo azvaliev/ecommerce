@@ -19,6 +19,7 @@ const Navbar = () => {
 							layout="fill"
 							objectFit="contain"
 							alt="Roman with scythe"
+							aria-hidden="true"
 							placeholder="blur"
 							/>
 					</div>
