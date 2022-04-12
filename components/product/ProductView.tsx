@@ -45,6 +45,7 @@ const ProductView = ({product}: {product: Product}) => {
 							alt={image.alt} 
 							objectFit="contain"
 							layout="fill" 
+							sizes="45vw"
 							priority
 							/>
 					</div>
