@@ -23,6 +23,12 @@ a {
   box-sizing: border-box;
 }
 
+svg {
+  fill: $text-primary-light;
+}
+svg.accent {
+  fill: $text-secondary;
+}
   
 s::before,
 s::after {

@@ -1,19 +1,23 @@
-import { match } from "assert";
 import { GetStaticProps } from "next";
 import ProductView from "../../components/product/ProductView";
 import ProductPreview from "../../components/products/ProductPreview";
 import { Product, ProductArray } from "../../components/products/ProductTypes";
+import useMobileCheck from "../../lib/useMobileCheck";
 import styles from "../../styles/modules/Product.module.scss";
 
 const ProductDisplay = ({product, reccomendedProducts}: {product: Product, reccomendedProducts: Product[]}) => {
+
+	const isMobile = useMobileCheck();
+
+	const reccomendedProductsFormat = reccomendedProducts ? isMobile ? reccomendedProducts.filter((p, idx) => idx !== 2) : [...reccomendedProducts] : []
 	return (
 		<div className={styles["wrapper-page-product"]}>
 			<ProductView product={product} />
 			<section className={styles["reccomended-wrapper"]}>
 				<h2>Reccomended Products</h2>
 				<div className={`reccomended ${styles["reccomended"]}`}>
-					{reccomendedProducts && reccomendedProducts.map((rec) => 
-						<ProductPreview product={rec} key={product.id} />
+					{reccomendedProductsFormat && reccomendedProductsFormat.map((rec) => 
+						<ProductPreview product={rec} key={rec.id} />
 						)}
 				</div>
 			</section>

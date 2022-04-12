@@ -1,6 +1,7 @@
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
-.wrapper-filters, .wrapper-sort {
+.wrapper-filters,
+.wrapper-sort {
 	display: flex;
 	flex-direction: row;
 	width: fit-content;
@@ -10,10 +11,34 @@
 		font-size: $text-lg;
 	}
 }
-.wrapper-sort {
-	margin-left: auto;
-}
 
 .filter {
 	margin-right: 1rem;
+}
+
+@media (max-width: $large) {
+	.wrapper-sort {
+		margin-top: 2vh;
+	}
+}
+
+@media (max-width: $mobile) {
+	.wrapper-filters,
+	.wrapper-sort {
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+		h4 {
+			margin: auto !important;
+			text-align: center;
+		}
+	}
+	.wrapper-sort {
+		margin-top: 10%;
+	}
+	.filter,
+	.sort {
+		width: 75vw;
+		margin: 1vh 0;
+	}
 }

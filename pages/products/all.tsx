@@ -4,7 +4,7 @@ import classes from "../../styles/pages/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
 import { createContext, useMemo, useReducer } from "react";
-import FilterSortWrapper from "../../components/products/FilterSortWrapper";
+import FilterSortWrapper from "../../components/products/filter-sort/FilterSortWrapper";
 
 // Types
 
@@ -21,7 +21,9 @@ const initialFilter: filterOpts = {
 }
 
 interface filterContext {
+	filterState?: filterOpts;
 	updateFilterState?: (newFilterOpts: filterOpts) => void;
+	sortingState?: string;
 	updateSortingState?: (newSortingState: string) => void;
 }
 
@@ -85,7 +87,9 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 		<div className={classes.root}>
 			<h1 className={classes.title}>All Products</h1>
 			<filterContext.Provider value={{
+				filterState: filterState,
 				updateFilterState: updateFilterState,
+				sortingState: sortingState,
 				updateSortingState: updateSortingState 
 				}}>
 				<FilterSortWrapper />

@@ -1,5 +1,4 @@
-@use '../abstracts/fonts' as *;
-@use '../abstracts/colors' as *;
+@use '../abstracts/' as *;
 
 .wrapper-page-product {
 	width: 70%;
@@ -80,4 +79,57 @@
 		justify-content: space-between;
 		margin: 0 5vw;
 	}
+}
+
+@media (max-width: $mobile) {
+	.wrapper-page-product {
+		width: 90%;
+	}
+	.wrapper-product {
+		flex-direction: column;
+		.wrapper-image-col {
+			display: flex;
+			flex-direction: row;
+			white-space: nowrap;
+			max-height: 65vh;
+			overflow: hidden;
+			.wrapper-image {
+				width: 90vw;
+				height: 65vh;
+				img {
+					object-fit: cover !important;
+				}
+			}
+		}
+		.wrapper-main {
+			position: static;
+			margin-top: 1.5em;
+			text-align: center;
+			p {
+				margin: 0.5em 0;
+			}
+			.pricing {
+				h4 {
+					font-size: $text-md;
+				}
+				.price {
+					margin-top: 0;
+					font-size: $text-2xl;
+				}
+			}
+			.select-size {
+				width: 100%;
+			}
+			.add-to-cart {
+				width: 100%;
+			}
+		}
+	}
+	.reccomended-wrapper .reccomended {
+		margin: 0;
+		.product {
+			width: 45%;
+		}
+	}
+		
 }

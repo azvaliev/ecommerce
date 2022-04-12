@@ -1,10 +1,9 @@
-@use '../abstracts/colors' as *;
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
 #nav-portal {
 	position: sticky;
 	top: 0; 
-	z-index: 1000;
+	z-index: $z-nav;
 }
 
 nav {
@@ -67,6 +66,29 @@ nav {
 				background-color: $accent-primary;
 				color: black;
 				font-weight: $font-xbold;
+			}
+		}
+	}
+}
+@media (max-width: $mobile) {
+	nav {
+		ul {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+
+			li {
+				font-size: $text-md;
+			}
+		}
+		.wrapper-icon-logo {
+
+			.wrapper-icon, .cart-icon {
+				height: 7vh;
+				width: 7vh;
+			}
+			.wrapper-logo {
+				width: 50vw;
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from "react";
-import { filterContext } from "../../pages/products/all";
-import classes from "../../styles/modules/ProductFilterSort.module.scss";
+import { filterContext } from "../../../pages/products/all";
+import classes from "../../../styles/modules/ProductFilterSort.module.scss";
 
 const allFilterOpts: filterSettings[] = [
 	{
@@ -62,7 +62,7 @@ const allFilterOpts: filterSettings[] = [
 	}	
 ]
 interface filterSettings {
-	type: string;
+	type: "productType" | "style" | "edition";
 	options: filterObj[];
 	id?: number;
 }
@@ -70,13 +70,10 @@ interface filterObj {
 	value: string;
 	displayValue: string;
 }
-interface filterProps {
-	allFilterOpts: filterSettings[];
-}
 
 const Filter = ({type, options, id}: filterSettings) => {
 
-	const { updateFilterState } = useContext(filterContext);
+	const { filterState, updateFilterState } = useContext(filterContext);
 
 	const handleUpdateFilterState = (e: ChangeEvent<HTMLSelectElement>) => {
 		updateFilterState!({
@@ -85,9 +82,17 @@ const Filter = ({type, options, id}: filterSettings) => {
 	}
 
 	return (
-		<select className={`filter accent ${classes["filter"]}`} onChange={handleUpdateFilterState} id={`filter${id}`}>
-			{options.map((setting, idx) => 
-				<option value={setting.value} key={idx}>
+		<select 
+			className={`filter accent ${classes["filter"]}`}
+			onChange={handleUpdateFilterState}
+			defaultValue={options.find(setting => setting.value === filterState![type])?.value}
+			id={`filter${id}`}
+			>
+			{options.map((setting) => 
+				<option 
+					value={setting.value}
+					key={setting.value}
+					>
 					{setting.displayValue}
 				</option>
 			)}

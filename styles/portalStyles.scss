@@ -1,16 +1,105 @@
-@use 'abstracts/colors' as *;
+@use 'abstracts/' as *;
 
 #filterbar {
-	position: fixed;
-	bottom: 0;
 	width: 100%;
-
-	background-color: $bg-secondary;
 
 	#wrapper-filter-sort {
 		display: flex;
 		flex-direction: row;
-		margin: auto 12vw;
+		justify-content: space-around;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		margin: 0 auto;
 		padding: 3vh 0;
+		background-color: $bg-secondary;
+	}
+}
+@media (max-width: $large) {
+	#filterbar #wrapper-filter-sort {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media (max-width: $mobile) {
+	#filterbar {
+		#wrapper-filter-sort {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 1.5vh 4vw;
+			h4 {
+				font-size: $text-xl;
+				margin: auto;
+				margin-left: 0;
+			}
+			svg {
+				height: 8vh;
+				width: 8vh;
+				margin: auto;
+				margin-right: 0;
+			}
+			.open {
+				position: absolute;
+				top: 1.5vh;
+				right: 4vw;
+				animation: rotup 0.6s ease-in-out forwards;
+			}
+		}
+		#wrapper-filter-sort.bar > svg.open {
+			animation: rotdown 0.6s ease-in-out forwards;
+		}
+	}
+	#filterbar > #wrapper-filter-sort.fullscreen {
+		position: fixed;
+		flex-direction: column;
+		justify-content: center;
+		z-index: $z-nav;
+		height: 70vh;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+		background-color: $bg-primary;
+		border-top: 1px solid $accent-primary;
+		animation: slideFilterUp 0.6s ease-in-out forwards;
+	}
+	#filterbar > #wrapper-filter-sort.bar {
+		animation: slideFilterDown 0.6s ease-in-out;
+	}
+}
+
+@keyframes slideFilterUp {
+	0% {
+		bottom: -60vh;
+	}
+	100% {
+		bottom: 0;
+	}
+}
+
+@keyframes slideFilterDown {
+	0% {
+		top: 20vh;
+	}
+	100% {
+		top: 78vh;
+	}
+}
+
+@keyframes rotup {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+@keyframes rotdown {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(180deg);
 	}
 }

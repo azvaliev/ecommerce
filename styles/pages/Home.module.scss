@@ -1,5 +1,4 @@
-@use '../abstracts/colors' as *;
-@use '../abstracts/fonts' as *;
+@use '../abstracts/' as *;
 
 $product-height: 60vh;
 
@@ -29,7 +28,9 @@ $product-height: 60vh;
 			.buttonWrapper {
 				display: flex;
 				margin: 3em 0 0;
-				button { margin: auto; }
+				button {
+					margin: auto;
+				}
 			}
 		}
 		.productWrapper {
@@ -37,6 +38,41 @@ $product-height: 60vh;
 			z-index: 10;
 			width: 100vw;
 			height: $product-height;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.main {
+		.productHighlight {
+			flex-direction: column-reverse;
+			height: auto;
+			.introText {
+				margin: 0;
+				padding: 1em 0.5em;
+				border-radius: 0;
+				text-align: center;
+				h1 {
+					font-size: $text-4xl;
+				}
+				span {
+					font-size: $text-lg;
+				}
+				.buttonWrapper {
+					margin: 1em 0 0;
+					color: black;
+				}
+				a {
+					color: black;
+				}
+			}
+			.productWrapper {
+				position: relative;
+				height: $product-height / 3.5;
+				img {
+					object-position: 20% 40% !important;
+				}
+			}
 		}
 	}
 }
