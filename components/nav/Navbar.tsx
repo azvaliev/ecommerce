@@ -22,6 +22,7 @@ const Navbar = () => {
 							alt="Roman with scythe"
 							aria-hidden="true"
 							placeholder="blur"
+							sizes="11vw"
 							/>
 					</div>
 				</Link>
@@ -32,6 +33,7 @@ const Navbar = () => {
 							layout="fill"
 							objectFit="contain"
 							alt="Perseus"
+							sizes="25vw"
 							priority
 							/>
 					</div>
