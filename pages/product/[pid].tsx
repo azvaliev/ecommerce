@@ -9,8 +9,7 @@ const ProductDisplay = ({product, reccomendedProducts}: {product: Product, recco
 
 	const isMobile = useMobileCheck();
 
-	const reccomendedProductsFormat = isMobile ? reccomendedProducts.filter((p, idx) => idx !== 2) : [...reccomendedProducts]
-	console.log(reccomendedProductsFormat);
+	const reccomendedProductsFormat = reccomendedProducts ? isMobile ? reccomendedProducts.filter((p, idx) => idx !== 2) : [...reccomendedProducts] : []
 	return (
 		<div className={styles["wrapper-page-product"]}>
 			<ProductView product={product} />
