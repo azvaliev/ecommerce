@@ -1,0 +1,6 @@
+@use 'abstracts/colors' as *;
+
+:export {
+	// Set the tab color to correspond with nav
+	tabColor: $bg-secondary;
+}
