@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useReducer } from "react";
+import useMobileCheck from "../../lib/useMobileCheck";
 import classes from "../../styles/modules/Product.module.scss";
 import ErrorPage from "../ErrorPage";
 import { Product } from "../ProductTypes";
@@ -31,12 +32,13 @@ const initialProductDetails: productDetails = {
 const ProductView = ({product}: {product: Product}) => {
 	
 	const [productDetails, updateProductDetails] = useReducer(handleUpdateDetails, initialProductDetails)
+	const isMobile = useMobileCheck();
 
 	return product ? (
 		<main className={classes["wrapper-product"]}>
 			<div className={classes["wrapper-image-col"]}>
 				{product.images.map((image, idx) =>
-					idx < 2 &&
+					!isMobile || idx < 2 ?
 					<div className={classes["wrapper-image"]} key={idx}>
 						<Image 
 							src={image.src}
@@ -46,7 +48,7 @@ const ProductView = ({product}: {product: Product}) => {
 							priority
 							/>
 					</div>
-				)}
+				: null)}
 			</div>
 			<section className={classes["wrapper-main"]}>
 				<h1>{product.title}</h1>
