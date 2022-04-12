@@ -29,7 +29,7 @@ touch .env.local
 ```
 
 Populate this file with an PRODUCTS_ENDPOINT variable set to whatever product endpoint you may desire to use.
-You can see how I've shaped the data [here](https://perseus-five.vercel.app/api/products)
+You can see how I've shaped the data [here](https://perseus-five.vercel.app/products/data)
 
 ```
 PRODUCTS_ENDPOINT=https://perseus-five.vercel.app/api/products
