@@ -1,4 +1,16 @@
-[
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
+	try {
+		res.status(200).json(products);
+	} catch (err) {
+		res.status(400).json({error: "data not available"});
+	}
+}
+
+export default handler;
+
+const products = [
 	{
 		"id": 0,
 		"title": "Light Coffee Vest",
