@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import classes from '../styles/pages/Home.module.scss'
-import BackgroundImage from "../public/img/models/man-in-suit-crossing-street.jpg"
+import BackgroundImage from "../public/img/models/man-in-suit-crossing-street.webp"
 import Link from 'next/link'
 
 const Home: NextPage = () => {
