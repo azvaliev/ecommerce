@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Product } from './ProductTypes';
+import { Product } from '../ProductTypes';
 import classes from '../../styles/pages/Products.module.scss';
 import Link from 'next/link';
 

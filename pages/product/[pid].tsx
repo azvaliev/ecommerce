@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import ProductView from "../../components/product/ProductView";
 import ProductPreview from "../../components/products/ProductPreview";
-import { Product, ProductArray } from "../../components/products/ProductTypes";
+import { Product, ProductArray } from "../../components/ProductTypes";
 import useMobileCheck from "../../lib/useMobileCheck";
 import styles from "../../styles/modules/Product.module.scss";
 

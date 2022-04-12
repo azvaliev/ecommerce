@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { Product, ProductArray } from "../../components/products/ProductTypes";
+import { Product, ProductArray } from "../../components/ProductTypes";
 import classes from "../../styles/pages/Products.module.scss";
 
 import ProductPreview from "../../components/products/ProductPreview";
