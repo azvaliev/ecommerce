@@ -107,7 +107,7 @@ const AllProducts = ({products}: {products: ProductArray}) => {
 	)
 }
 export const getStaticProps: GetStaticProps = async (context) => {
-	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
+	const res = await fetch(process.env.PRODUCTS_ENDPOINT!, {
 		method: "GET"
 	})
 	.then(res => res.json());

@@ -28,7 +28,7 @@ const ProductDisplay = ({product, reccomendedProducts}: {product: Product, recco
 export const getStaticProps: GetStaticProps = async(context) => {
 	
 	const { pid } = context.params!; 
-	const [res, reccomendedProducts] = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
+	const [res, reccomendedProducts] = await fetch(process.env.PRODUCTS_ENDPOINT!, {
 		method: "GET"
 	})
 	.then(res => res.json())
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps = async(context) => {
 
 export const getStaticPaths = async() => {
 
-	const res = await fetch("https://res.cloudinary.com/dhqlxce9z/raw/upload/v1648857188/perseus/products_bvqqdk.json", {
+	const res = await fetch(process.env.PRODUCTS_ENDPOINT!, {
 		method: "GET"
 	})
 	.then(res => res.json())	
