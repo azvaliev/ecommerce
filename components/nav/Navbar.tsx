@@ -2,6 +2,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import NavItem from "./Navitem";
 import PerseusIcon from "../../public/img/logo/perseus-icon.webp";
+import PerseusFullLogo from "../../public/img/logo/text-logo.webp";
 import Link from "next/link";
 import useMountCheck from "../../lib/useMountCheck";
 
@@ -27,7 +28,7 @@ const Navbar = () => {
 				<Link href="/" passHref>
 					<div className="wrapper-logo">
 						<Image 
-							src="/img/logo/text-logo.webp" 
+							src={PerseusFullLogo} 
 							layout="fill"
 							objectFit="contain"
 							alt="Perseus"
