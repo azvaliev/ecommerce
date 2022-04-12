@@ -3,11 +3,11 @@ import Image from "next/image";
 import NavItem from "./Navitem";
 import PerseusIcon from "../../public/img/logo/perseus-icon.webp";
 import Link from "next/link";
-import usePortalMountCheck from "../../lib/usePortalMountCheck";
+import useMountCheck from "../../lib/useMountCheck";
 
 const Navbar = () => {
 
-	const isMounted = usePortalMountCheck();
+	const isMounted = useMountCheck();
 
 	return isMounted ? createPortal(
 		<nav>

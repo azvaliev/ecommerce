@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
 // This custom hook just checks for mounting so React Portal can be succesfully initialized
-const usePortalMountCheck = () => {
+// Without, this hook I was encountering error 'document is not defined'
+const useMountCheck = () => {
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
@@ -13,4 +14,4 @@ const usePortalMountCheck = () => {
 	return isMounted;
 }
 
-export default usePortalMountCheck;
+export default useMountCheck;

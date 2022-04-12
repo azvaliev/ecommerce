@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import usePortalMountCheck from '../../../lib/usePortalMountCheck';
+import useMountCheck from '../../../lib/useMountCheck';
 import useMobileCheck from '../../../lib/useMobileCheck';
 import ProductFilters from './ProductFilters';
 import Sorting from './Sorting';
@@ -7,7 +7,7 @@ import useStateToggle from '../../../lib/useStateToggle';
 import { useState } from 'react';
 
 const FilterSortWrapper = () => {
-	const isMounted = usePortalMountCheck();
+	const isMounted = useMountCheck();
 	const isMobile = useMobileCheck();
 	const [sortPageOpen, toggleSortPageOpen] = useStateToggle(false);
 	const [closeAnimLoading, setCloseAnimLoading] = useState(false);
