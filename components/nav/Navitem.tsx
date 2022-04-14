@@ -5,14 +5,12 @@ interface Props {
 	href: string;
 }
 
-const NavItem = ({display, href}: Props) => {
+const NavItem = ({ display, href }: Props) => {
 	return (
 		<Link href={href} passHref>
-			<li>
-				{display}
-			</li>
+			<li id={display.toLowerCase()}>{display}</li>
 		</Link>
-	)
-}
+	);
+};
 
 export default NavItem;

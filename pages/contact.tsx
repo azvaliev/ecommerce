@@ -13,15 +13,20 @@ const ContactPage = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const formElements = e.currentTarget.elements;
-		const nameInput = formElements[0] as HTMLInputElement;
-		const messageInput = formElements[1] as HTMLInputElement;
+		const messageInput = formElements[1] as HTMLTextAreaElement;
+		const emailInput = formElements[0] as HTMLInputElement;
 		const requestData = {
-			name: nameInput.value,
 			message: messageInput.value,
+			email: emailInput.value,
 		};
-		e.currentTarget.reset();
 		try {
+			for (const value of Object.entries(requestData)) {
+				if (value[1].length < 3) {
+					throw new Error();
+				}
+			}
 			// Send with third party
+			e.currentTarget.reset();
 			setMessageIsSubmitted("sent");
 			setTimeout(() => {
 				router.push("/");
@@ -54,7 +59,8 @@ const ContactPage = () => {
 					}`}
 				>
 					<h2>
-						Message delivered successfully
+						{messageIsSubmitted === "sent" &&
+							"Message delivered successfully"}
 						<svg
 							focusable="false"
 							aria-hidden="true"
@@ -71,7 +77,8 @@ const ContactPage = () => {
 					}`}
 				>
 					<h2>
-						Message delivery failed
+						{messageIsSubmitted === "error" &&
+							"Message delivery failed"}
 						<svg
 							focusable="false"
 							aria-hidden="true"
@@ -88,10 +95,11 @@ const ContactPage = () => {
 							className={`${classes["form__row"]} ${classes["form__inputwrapper"]}`}
 						>
 							<input
-								type="text"
-								aria-label="name"
-								placeholder="Your Name"
+								type="email"
+								aria-label="email"
+								placeholder="E-Mail"
 								minLength={2}
+								name="email"
 							/>
 						</div>
 						<div className={classes["form__row"]}>
