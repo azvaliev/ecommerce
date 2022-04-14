@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import ErrorPage from "../../components/ErrorPage";
 import ProductView from "../../components/product/ProductView";
 import ProductPreview from "../../components/products/ProductPreview";
 import { Product, ProductArray } from "../../components/ProductTypes";
@@ -20,7 +21,8 @@ const ProductDisplay = ({
 			? reccomendedProducts.filter((p, idx) => idx !== 2)
 			: [...reccomendedProducts]
 		: [];
-	return (
+
+	return product ? (
 		<>
 			<Head>
 				<title>{product.title}</title>
@@ -40,6 +42,8 @@ const ProductDisplay = ({
 				</section>
 			</div>
 		</>
+	) : (
+		<ErrorPage errorCode={404} errorName="Product Not Found" />
 	);
 };
 
