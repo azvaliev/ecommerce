@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { Product, ProductArray } from "../../components/ProductTypes";
 import classes from "../../styles/pages/Products.module.scss";
 
@@ -130,7 +130,7 @@ const AllProducts = ({ products }: { products: ProductArray }) => {
 		</>
 	);
 };
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	const res = await fetch(process.env.PRODUCTS_ENDPOINT!, {
 		method: "GET",
 	}).then((res) => res.json());

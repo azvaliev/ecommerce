@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 // This custom hook takes an endpoint, type of data
 // & interface type for returned data
@@ -9,23 +9,14 @@ type resType = "json" | "text";
 function useFetch <S>(endpoint: string, resType: resType="json"):
 	{res: S | null, isLoading: boolean}
 {
-	const [data, setData] = useState({
-		res: null,
-		isLoading: true
-	});
 
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(endpoint);
-			const parsedRes = resType === "json" ? await res.json() : await res.text();
-			setData({
-				res: parsedRes,
-				isLoading: false
-			}); 
-		}
-		getData();
-	}, [endpoint, resType])
+	const fetcher = (args_0: string) => fetch(args_0).then(res => resType === "json" ? res.json() : res.text())
 
-	return data;
+	const {data, error} = useSWR(endpoint, fetcher)
+
+	return {
+		res: data,
+		isLoading: !error && !data
+	};
 }
 export default useFetch;

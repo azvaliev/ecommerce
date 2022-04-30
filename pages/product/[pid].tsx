@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import ErrorPage from "../../components/ErrorPage";
 import ProductView from "../../components/product/ProductView";
@@ -47,7 +47,7 @@ const ProductDisplay = ({
 	);
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { pid } = context.params!;
 	const [res, reccomendedProducts] = await fetch(
 		process.env.PRODUCTS_ENDPOINT!,
@@ -94,18 +94,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	};
 };
 
-export const getStaticPaths = async () => {
-	const res = await fetch(process.env.PRODUCTS_ENDPOINT!, {
-		method: "GET",
-	})
-		.then((res) => res.json())
-		.then((res: ProductArray) => {
-			return res.map((res) => ({ params: { pid: res.id.toString() } }));
-		});
-	return {
-		paths: res,
-		fallback: true,
-	};
-};
 
 export default ProductDisplay;
