@@ -139,9 +139,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 		props: {
 			products: res,
 		},
-
-		// Regenerate page
-		revalidate: 10,
 	};
 };
 

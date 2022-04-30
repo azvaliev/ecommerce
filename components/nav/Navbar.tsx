@@ -48,7 +48,6 @@ const Navbar = () => {
 				<NavItem display="Home" href="/" />
 				<NavItem display="Shop" href="/products/all" />
 				<NavItem display="Contact" href="/contact"/>
-				<NavItem display="About" href="/about"/>
 			</ul>
 		</nav>,
 		document.getElementById("nav-portal")!

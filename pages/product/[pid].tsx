@@ -90,7 +90,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 			product: res,
 			reccomendedProducts: reccomendedProducts,
 		},
-		revalidate: 10,
 	};
 };
 
