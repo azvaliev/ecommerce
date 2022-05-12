@@ -10,7 +10,7 @@ const ErrorPage = ({ errorCode, errorName }: Props) => {
 		<>
 			<Head>
 				<title>Perseus</title>
-				<meta name="description" content={`404 - Page Not Found`} />
+				<meta name="description" content={"404 - Page Not Found"} />
 			</Head>
 			<div className="error-wrapper">
 				<h1>{errorCode}</h1>
